@@ -5,14 +5,12 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
-const publicPath = '/';
-
 module.exports = {
-  entry: './src/index.js', //相对路径
+  /*entry: './src/index.js', //相对路径*/
+  entry:'C:/Users/22935/WebstormProjects/shoppingSystem_react/src/index.js',
   output: {
     path: path.resolve(__dirname, 'build'), //打包文件的输出路径
     filename: 'bundle.js', //打包文件名
-    publicPath: publicPath,
   },
 
   module: {
@@ -26,7 +24,6 @@ module.exports = {
       }
     ]
   },
-
   plugins: [
     new HtmlWebpackPlugin({//html-webpack-plugin自动生成模板文件，以及后面用到的分离CSS等。
       template: './public/index.html', //指定模板路径
