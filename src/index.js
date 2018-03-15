@@ -2,19 +2,26 @@
  * Created by 22935 on 2018/3/11.
  */
 import React from 'react';
-import ReactDom from 'react-dom';
+import { render } from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
+import Root from './Root';
 
-class App extends React.Component {
-  render() {
-    return <h1> Hello, world! </h1>
-  }
+render(
+  <AppContainer>
+    <Root />
+  </AppContainer>,
+  document.getElementById('root')
+);
+
+if (module.hot) {
+  module.hot.accept('./Root', () => {
+    const NewRoot = require('./Root').default;
+    render(
+      <AppContainer>
+        <NewRoot />
+      </AppContainer>,
+      document.getElementById('root')
+    );
+  });
 }
 
-ReactDom.render(
-  <App />,
-  document.getElementById('root')
-)
-
-/*function hello() {
-  console.log('hello world');
-}*/
