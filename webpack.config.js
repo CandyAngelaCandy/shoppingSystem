@@ -58,6 +58,7 @@ module.exports = {
     }),
    new webpack.HotModuleReplacementPlugin()//热模块替换插件
   ],
+  devtool: 'source-map'
   /*devServer: {
     contentBase: path.join(__dirname, "build"),
     compress: true,

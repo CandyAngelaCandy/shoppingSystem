@@ -21,7 +21,6 @@ class ListPageHeader extends React.Component {
         </div>
       </div>
     )
-
   }
 }
 
